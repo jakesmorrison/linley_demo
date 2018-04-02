@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linley Conference</title>
+
+    {% load staticfiles %}
+    <link href=" {% static 'demo/css/bootstrap.css' %}" rel="stylesheet">
+    <link href=" {% static 'demo/css/linely_demo.css' %}" rel="stylesheet">
+    <!--<link href=" {% static 'demo/css/work_sans_font.css' %}" rel="stylesheet">-->
+    <link href=" {% static 'demo/css/ubuntu_font.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="container" style="">
+    <div class="col-lg-11 col0">
+        <div class="row row1">
+            <div class="col-lg-12 box-outline">
+                <!--<button id="pause" type="button" class="btn btn-default rotate" onclick="pause_unpause()">Normalized Bandwidth</button>-->
+                <div id="bw_chart"></div>
+            </div>
+        </div>
+
+        <div class="row row2">
+            <div class="col-lg-5">
+                <div id="error_window" style="color: #58595B;">
+                    <p id="eps" class="myfont">Errors Per Second: 0</p>
+                    <div id="error_logging"></div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-7 box-outline" >
+                <div id="db_chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 col1" style="">
+            <img class="micron_icon rotate1" src="{% static 'demo/images/micron_icon.png' %}" alt="micron">
+    </div>
+</div>
+
+
+
+
+<script src=" {% static 'demo/js/jquery-1.12.4.js' %}"></script>
+<script src=" {% static 'demo/js/bootstrap.js' %}"></script>
+<script src=" {% static 'demo/js/highcharts.js' %}"></script>
+<script src=" {% static 'demo/js/highcharts-more.js' %}"></script>
+<script src=" {% static 'demo/js/exporting.js' %}"></script>
+<script src=" {% static 'demo/js/linely_demo_request_data.js' %}"></script>
+<script src=" {% static 'demo/js/linely_bw.js' %}"></script>
+<script src=" {% static 'demo/js/db_chart.js' %}"></script>
+
+<script>
+
+var bw_chart;
+var db_chart;
+var error_log_counter = 0;
+var pause = false;
+var num_log_items = 0
+
+$( document ).ready(function() {
+
+    // Setting Sizing
+    var total_height = $(window).height();
+    //var row_0_height = parseInt($('.row0').css('height').replace("px",""))+10;
+    var row_height = (total_height)/2
+
+    $(".row1").css('height',row_height);
+    $(".row2").css('height',row_height);
+    $(".col1").css('height',total_height);
+
+
+
+    $(".micron_icon").css('top',total_height*.50-parseInt($(".micron_icon").css('height').replace("px","")));
+    $(".box-outline").css('margin-top',row_height*.05)
+    $("#outline").css('height',row_height*.90)
+    $("#bw_chart").css('margin-top',row_height*.03)
+    $("#bw_chart").css('height',row_height*.87)
+
+    heading_height = 10 + parseInt(($('#eps').css("height").replace("px","")));
+
+    $("#error_logging").css('height', row_height*.90 - heading_height)
+    $("#error_window").css('margin-top', row_height*.05)
+    $("#db_chart").css('height', row_height*.90)
+
+    <!--$('#error_logging').append("<span id='start_log' class='log_line'><span class='date_time'>"+new Date()+": </span><span class='log_header myfont'>Begin Logging</span><br></span>");-->
+    $('#error_logging').append("<p class='log_header myfont'>Logging</p><br>");
+
+    <!--line_height = parseInt(($('#start_log').css("height").replace("px","")));-->
+    num_log_items = ((row_height*.90 - heading_height)/20)-2;
+
+    error_log_counter += 1;
+    bw_chart = bw_chart();
+    db_chart = db_chart();
+
+    url_base = "{% url 'demo:get_data_demo' %}";
+    requestData(url_base);
+
+    <!--second_y_axis = $("text:contains('zzz')" )[0];-->
+    <!--x_val = (second_y_axis).getAttribute( 'x' );-->
+    <!--y_val = (second_y_axis).getAttribute( 'y' );-->
+
+    <!--$("#pause").css("left", parseInt(x_val)-140);-->
+    <!--$("#pause").css("top", parseInt(y_val));-->
+
+
+});
+
+<!--function pause_unpause(){-->
+    <!--if (pause === false){-->
+        <!--pause = true;-->
+    <!--}-->
+    <!--else{-->
+        <!--pause = false;-->
+        <!--url_base = "{% url 'demo:get_data_demo' %}";-->
+        <!--requestData(url_base);-->
+    <!--}-->
+<!--}-->
+
+
+</script>
+
+</body>
+</html>

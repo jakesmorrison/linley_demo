@@ -1,0 +1,203 @@
+
+
+.centered{
+    text-align: center;
+}
+
+.container {
+   width: 100%;
+   padding-right: 0px;
+   padding-left: 0px;
+   margin-right: 0px;
+   margin-left: 0px;
+}
+
+.myfont{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: white;
+}
+
+
+.log_line{
+    padding: 10px;
+}
+
+.log_header{
+    color: black;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.errors{
+    color: #0077C8;
+    padding-left: 10px;
+}s
+
+.date_time{
+    font-size: 10px;
+    color: #58595B;
+    font-family: 'Courier New', 'Courier New', 'monospace';
+}
+
+.rotate {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.rotate1 {
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+
+    /* IE */
+    -ms-transform: rotate(90deg);
+
+    /* Opera */
+    -o-transform: rotate(90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+#pause{
+    position: absolute;
+    z-index: 50;
+    font-size: 13px;
+    padding: 4px;
+    border-color: transparent;
+    color: #58595B;
+    font-size: 20px;
+    background: white;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 2.5%
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #666666;
+    background-color: white;
+    border-color: white; /*set the color you want here*/
+    outline: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-default:active:focus {
+    color: #666666;
+    background-color: white;
+    border-color: white; /*set the color you want here*/
+    outline: none;
+}
+
+.line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+.box-outline{
+    border-top: 5px solid #58595B;
+    border-left: 5px solid #58595B;
+    border-radius: 4px;
+    background: white;
+}
+*/
+
+.row0{
+    height: 50px;
+}
+
+#bw_chart{
+    width: 100%;
+    margin-left: 0%;
+    background: white;
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+#db_chart{
+    background: white;
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.para_text{
+    word-wrap: break-word;
+}
+
+.heading1{
+    margin-left: 20px;
+    background: #58595B;
+    border-top: 5px solid #808284;
+    border-left: 5px solid #808284;
+    border-radius: 4px;
+    color: white;
+}
+
+.micron_icon{
+    width: 215%;
+    left: -50%;
+    position: absolute;
+}
+
+#eps{
+    width: 100%;
+    color: black;
+    background: white;
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+#error_logging{
+    width: 100%;
+    border-radius: 4px;
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+
+/*    https://www.transparenttextures.com/   */
+
+.col1{
+    background-color: #ffffff;
+    background-image: url("../images/diagmonds-light.png");
+}
+
+
+.col0{
+    background-color: #0077C8;
+    background-image: url("../images/60-lines.png");
+}
