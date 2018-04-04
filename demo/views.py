@@ -93,7 +93,7 @@ def get_data_demo(request):
     context = {
         'read_bw': 100*float(read_bw),
         'write_bw': 100*float(write_bw),
-        'tps': db_set,
+        'tps': db_set/1000,
         'errors': int(errors)
     }
     return JsonResponse(json.loads(json.dumps(context)))

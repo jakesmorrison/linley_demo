@@ -15,7 +15,18 @@
 <body>
 
 <div class="container" style="">
-    <div class="col-lg-11 col0">
+    <div class="col-lg-12 col0" style="width: 94%; margin-left: 3%">
+        <div class="row row0">
+            <div class="col-lg-8 box-outline">
+                <div id="micron_heading">
+                    <p class="myfont" style="font-size:40px;margin: 0;">Think Differently About Micron</p>
+                    <p class="myfont" style="font-size:22px; margin: 0;">Solving memory problems together.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 box-outline" style="text-align: center;">
+                <img class="micron_icon" src="{% static 'demo/images/micron_white.png' %}" alt="micron">
+            </div>
+        </div>
         <div class="row row1">
             <div class="col-lg-12 box-outline">
                 <!--<button id="pause" type="button" class="btn btn-default rotate" onclick="pause_unpause()">Normalized Bandwidth</button>-->
@@ -37,9 +48,8 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-1 col1" style="">
-            <img class="micron_icon rotate1" src="{% static 'demo/images/micron_icon.png' %}" alt="micron">
-    </div>
+
+
 </div>
 
 
@@ -61,22 +71,28 @@ var db_chart;
 var error_log_counter = 0;
 var pause = false;
 var num_log_items = 0
-
+var micron_logo_width = 250;
 $( document ).ready(function() {
 
     // Setting Sizing
     var total_height = $(window).height();
+    var total_width = $(window).width();
+
     //var row_0_height = parseInt($('.row0').css('height').replace("px",""))+10;
-    var row_height = (total_height)/2
+    var row_height = total_height*.45
 
-    $(".row1").css('height',row_height);
-    $(".row2").css('height',row_height);
-    $(".col1").css('height',total_height);
+    $(".row0").css('height',total_height*.1);
+    $(".row1").css('height',total_height*.45);
+    $(".row2").css('height',total_height*.45);
 
 
+    <!--$(".micron_icon").css('width',micron_logo_width);-->
+    <!--$(".micron_icon").css('left',total_width-micron_logo_width-total_width*.06-50);-->
+    <!--$(".micron_icon").css('top',10);-->
+    <!--$(".micron_icon").css('display','inline-block');-->
 
-    $(".micron_icon").css('top',total_height*.50-parseInt($(".micron_icon").css('height').replace("px","")));
-    $(".box-outline").css('margin-top',row_height*.05)
+
+    $(".box-outline").css('margin-top',row_height*.03)
     $("#outline").css('height',row_height*.90)
     $("#bw_chart").css('margin-top',row_height*.03)
     $("#bw_chart").css('height',row_height*.87)
@@ -84,7 +100,7 @@ $( document ).ready(function() {
     heading_height = 10 + parseInt(($('#eps').css("height").replace("px","")));
 
     $("#error_logging").css('height', row_height*.90 - heading_height)
-    $("#error_window").css('margin-top', row_height*.05)
+    $("#error_window").css('margin-top', row_height*.03)
     $("#db_chart").css('height', row_height*.90)
 
     <!--$('#error_logging').append("<span id='start_log' class='log_line'><span class='date_time'>"+new Date()+": </span><span class='log_header myfont'>Begin Logging</span><br></span>");-->

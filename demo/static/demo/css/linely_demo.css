@@ -13,7 +13,8 @@
 }
 
 .myfont{
-    font-family: 'Ubuntu', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body {
@@ -27,7 +28,7 @@ html, body {
 }
 
 .log_header{
-    color: black;
+    color: rgba(88, 89, 91, 1);;
     padding-left: 10px;
     font-size: 20px;
     margin-bottom: 0px;
@@ -89,7 +90,8 @@ html, body {
     color: #58595B;
     font-size: 20px;
     background: white;
-    font-family: 'Ubuntu', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
     margin-left: 2.5%
 }
 
@@ -140,7 +142,13 @@ html, body {
     border-radius: 4px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
 
+#micron_heading{
+    width: 100%;
+    padding-left: 10px;
+    font-weight: 700;
+    color: white;
 }
 
 #db_chart{
@@ -163,20 +171,15 @@ html, body {
     color: white;
 }
 
-.micron_icon{
-    width: 215%;
-    left: -50%;
-    position: absolute;
-}
 
 #eps{
     width: 100%;
-    color: black;
+    color: rgba(88, 89, 91, 1);;
     background: white;
     border-radius: 4px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 25px;
+    font-size: 26px;
     padding-left: 10px;
     font-weight: 700;
 }
@@ -199,7 +202,14 @@ html, body {
 }
 
 
-.col0{
+.container{
     background-color: #0077C8;
     background-image: url("../images/60-lines.png");
+}
+
+.micron_icon{
+    /*position: absolute;
+    display: none;*/
+    width: 320px;
+    text-align: center;
 }

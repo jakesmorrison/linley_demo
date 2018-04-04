@@ -1,5 +1,7 @@
-text_color = "black";
-font_family = 'Ubuntu, sans-serif';
+text_color = "rgba(88, 89, 91, 1);";
+//font_family = 'Ubuntu, sans-serif';
+font_family = 'Arial, Helvetica, sans-serif';
+
 
 function db_chart() {
     return new Highcharts.Chart({
@@ -25,7 +27,7 @@ function db_chart() {
             style: {
                 fontFamily: font_family,
                 color: text_color,
-                fontSize: 25,
+                fontSize: 26,
                 fontWeight: 700,
             }
         },
@@ -83,7 +85,7 @@ function db_chart() {
             labels: {
                 formatter: function() {
                     val = this.value;
-                    return '' + val.toLocaleString();
+                    return '' + val.toLocaleString()+'k';
                 },
                 style: {
                     fontFamily: font_family,
