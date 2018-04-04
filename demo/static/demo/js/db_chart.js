@@ -20,12 +20,13 @@ function db_chart() {
             enabled: false
         },
         title: {
-            text: 'HammerDB: Transactions Per Iteration',
+            text: 'In-Memory Database: Transactions Per Iteration',
             align: 'left',
             style: {
                 fontFamily: font_family,
                 color: text_color,
                 fontSize: 25,
+                fontWeight: 700,
             }
         },
 //        subtitle: {

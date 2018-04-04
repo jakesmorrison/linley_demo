@@ -26,12 +26,14 @@ function bw_chart() {
                 fontFamily: font_family,
                 color: text_color,
                 fontSize: 25,
+                fontWeight: 700,
             }
         },
         legend: {
             itemStyle: {
                 fontFamily: font_family,
-                color: text_color
+                color: text_color,
+                fontSize: 15,
             },
             layout: 'horizontal',
             floating: false,
